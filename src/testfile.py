@@ -14,11 +14,12 @@ def readFromFile(myFile):
 def test_case_compare(inputFile, cheatFile):
     inp = readFromFile(inputFile)
     stdout.write("Input Board\n")
-    gameoflife.printBoard(inp)
-    out = gameoflife.generation(inp)
+    myObj = gameoflife.GameOfLife()
+    myObj.printBoard(inp)
+    out = myObj.generation(inp)
     if(out):
         stdout.write("Output Board\n")
-        gameoflife.printBoard(out)
+        myObj.printBoard(out)
         ans = readFromFile(cheatFile)
         if ans == out:
             stdout.write("\nTest Passed. Hurray! :-)")
